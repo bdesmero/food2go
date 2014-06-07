@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  table#index-content
+    tr
+        td#intro
+            div
+                h1 Satisfy your hunger, NOW!
+                p.
+                    Food2Go helps you browse through restaurants' menu in Seoul and decide what to eat.
+                    The best thing is... it's in ENGLISH! So y'all foreigners out there get excited.
+                    You're in for a real, delicious treat!
+
+        td
+          #login.well
+            h1 Login
+
+            #login-alert.alert.alert-danger.
+                Incorrect email/password
+
+            form#login-form(action="/users/login" method="post")
+                .input-group
+                    span.input-group-addon Email
+                    input.form-control(type="text", name="email")
+
+                .input-group
+                    span.input-group-addon Password
+                    input.form-control(type="password", name="password")
+
+                .form-group
+                    input.btn.btn-primary.btn-block(type="submit") Login

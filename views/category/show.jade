@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1= category.name
+        small: em: a(href="/restaurants/" + category.restaurant_id + "/categories") Back to Categories
+
+        br
+        br
+
+        .btn-group
+            a.btn.btn-primary(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id + "/edit") Edit
+            a.btn.btn-danger(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id + "/delete") Delete
+
+        br
+
+        h2 Items
+        a.btn.btn-default(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id + "/items/new") Create
+        table.table.table-striped
+            thead
+                th Name
+                th Description
+                th Price
+                th Edit
+                th Delete
+            tbody
+                -items.forEach(function(item){
+                    tr
+                        td= item.name
+                        td= item.description
+                        td= item.price
+                        td: a(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id + "/items/" + item.id + "/edit") Edit
+                        td: a(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id + "/items/" + item.id + "/delete") Delete
+                -})

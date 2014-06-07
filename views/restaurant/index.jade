@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1 Restaurants
+        
+        br
+
+        a.btn.btn-primary(href="/restaurants/new") Create
+
+        br
+        br
+
+        -restos.forEach(function(resto){
+            .well
+                a(href="/restaurants/" + resto._id)= resto.name
+                small
+                    br
+                    em= resto.address
+                    br
+                    em= resto.contact_num
+        -})
+

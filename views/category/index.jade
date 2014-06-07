@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1 Categories
+        small: em: a(href="/restaurants/" + restoId) Back to Restaurant
+        
+        br
+        br
+        
+        a.btn.btn-primary(href="/restaurants/" + restoId + "/categories/new") Create
+
+        table.table.table-striped
+            thead
+                th Name
+            tbody
+                -categories.forEach(function(category){
+                    tr: td: a(href="/restaurants/" + category.restaurant_id + "/categories/" + category.id)= category.name
+                -})

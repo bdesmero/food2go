@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 New Category
+
+        form#create-category-form(action="/restaurants/" + restoId + "/categories/new", method="post")
+
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name")
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/restaurants/" + restoId + "/categories") Cancel

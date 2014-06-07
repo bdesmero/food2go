@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1= name
+        h5= email
+
+        .btn-group
+            a.btn.btn-primary(href="/users/" + _id + "/edit") Edit
+            a.btn.btn-danger(href="/users" + _id + "/delete") Delete

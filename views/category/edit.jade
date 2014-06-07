@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 Edit Category
+
+        form#edit-category-form(method="post")
+
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name", value=name)
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/restaurants/" + restaurant_id + "/categories/" + _id) Cancel

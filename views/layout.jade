@@ -1,0 +1,121 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="/javascripts/jquery-1.10.2.min.js")
+    script(src="/javascripts/bootstrap.min.js")	
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/f2g.js")
+
+  body
+    .header
+        nav.navbar.navbar-default(role="navigation")
+            .navbar-header
+                button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-collapsible")
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="/") Food2Go
+            
+            #navbar-collapsible.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li.dropdown
+                        a.dropdown-toggle(href="#" data-toggle="dropdown") Restaurants
+                            b.caret
+                        ul.dropdown-menu
+                            li: a(href="/restaurants") All
+                            li: a(href="/restaurants/new") Create
+
+                ul.nav.navbar-nav
+                    li.dropdown
+                        a.dropdown-toggle(href="#" data-toggle="dropdown") Users
+                            b.caret
+                        ul.dropdown-menu
+                            li: a(href="/users") All
+                            li: a(href="/users/new") Create
+
+                ul.nav.navbar-nav.navbar-right
+                    li: a(href="/about") About
+                    li: a(href="#") Contact Us
+                    li: a(href="#") Login
+
+    .content
+        table.table
+            tr
+                td.main-content
+                    block content
+                td
+                    #options.pull-right(style="width: 100px;")
+                        .btn-group
+                            a#show-order.btn.btn-default.btn-xs(href="#"): span.glyphicon.glyphicon-th-list
+                            a#show-chat.btn.btn-default.btn-xs(href="#"): span.glyphicon.glyphicon-comment
+
+                    #chat-box.well.pull-right
+                        a#hide-chat.btn.btn-default.btn-xs(href="#")
+                            span.glyphicon.glyphicon-chevron-up
+
+                        #chat-name
+                            .input-group
+                                span.input-group-addon
+                                    span.glyphicon.glyphicon-user
+                                input#name.form-control(type="text", name="name", placeholder="Name")
+
+                            .form-group
+                                a#start-chat.btn.btn-primary.btn-block(data-role="button" href="#") Start Chatting
+
+                        #chat
+                            #chat-messages
+
+                            #chat-input
+                                .input-group
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-comment
+                                    input#message.form-control(type="text", name="messages")
+
+                            .form-group
+                                input#send-message.btn.btn-primary.btn-block(type="submit" value="Send")
+
+
+                    #order-box.well.pull-right
+                        a#hide-order.btn.btn-default.btn-xs(href="#")
+                            span.glyphicon.glyphicon-chevron-up
+
+                        br
+                        br
+
+                        form#create-order-form(action="/orders/new" method="post")
+
+                            .input-group
+                                span.input-group-addon
+                                    span.glyphicon.glyphicon-user
+                                input#name.form-control(type="text", name="customer_name", placeholder="Name")
+
+                            .input-group
+                                span.input-group-addon
+                                    span.glyphicon.glyphicon-home
+                                input#name.form-control(type="text", name="customer_address", placeholder="Address")
+
+                            .input-group
+                                span.input-group-addon
+                                    span.glyphicon.glyphicon-earphone
+                                input#name.form-control(type="text", name="customer_contactnum", placeholder="Contact Num")
+
+
+                            #orders
+                                h3 Order List
+
+                                table.table
+                                    thead
+                                        th Item
+                                        th Price
+                                    tbody#order-list
+
+                                .input-group
+                                    span.input-group-addon Total
+                                    input#total.form-control(type="text", name="total", placeholder="0", value="0" readonly)
+
+                                .form-group
+                                    input#submit-order.btn.btn-primary.btn-block(type="submit" value="Submit Order")

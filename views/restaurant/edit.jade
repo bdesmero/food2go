@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 Edit Restaurant
+
+        form#edit-resto-form(method="post")
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name", value=name)
+
+            .input-group
+                span.input-group-addon Address
+                input.form-control(type="text", name="address", value=address)
+
+            .input-group
+                span.input-group-addon Delivery Number
+                input.form-control(type="text", name="deliverynum", value=delivery_num)
+
+            .input-group
+                span.input-group-addon Contact Number
+                input.form-control(type="text", name="contactnum", value=contact_num)
+
+            .input-group
+                span.input-group-addon Email Address
+                input.form-control(type="text", name="email", value=email)
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/restaurants/" + _id) Cancel

@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1 Users
+        
+        br
+
+        a.btn.btn-primary(href="/users/new") Create
+
+        table.table.table-striped
+            thead
+                th Email
+                th Name
+                th Edit
+                th Delete
+            -users.forEach(function(user){
+                tr
+                    td: a(href="/users/" + user.id)= user.email
+                    td= user.name
+                    td: a(href="/users/" + user.id + "/edit") Edit
+                    td: a(href="/users/" + user.id + "/delete") Delete
+            -})

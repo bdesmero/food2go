@@ -1,0 +1,101 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.category {
+    padding: 10px;
+}
+
+
+.content {
+    padding: 0 0 20px 0;
+}
+
+
+.f2g-form {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+.f2g-form .input-group, .form-group {
+    padding: 10px;
+}
+
+
+.item-price {
+    width: 20%;
+}
+
+
+.main-content {
+    width: 100%;
+}
+
+
+.message {
+    padding: 5px 10px;
+}
+
+
+#categories {
+    margin-top: 50px;
+}
+
+
+#chat {
+    display: none;
+}
+
+
+#chat-box {
+    width: 300px;
+    display: none;
+}
+
+
+#chat-name {
+    margin-top: 20px;
+}
+
+
+#chat-input {
+    vertical-align: bottom;
+}
+
+
+#chat-messages {
+    padding: 10px;
+    overflow: auto;
+}
+
+
+#index-content {
+    margin-top: 50px;
+}
+
+#intro {
+    width: 50%;
+    text-align: right;
+}
+
+#login {
+    width: 330px;
+    margin-left: 20px;
+}
+
+#login-form .input-group, .form-group {
+    padding: 10px;
+}
+
+#login-alert {
+    display: none;
+}
+
+
+#order-box {
+    width: 300px;
+    display: none;
+}

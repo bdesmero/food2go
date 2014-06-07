@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 New User
+
+        form#create-user-form(method="post")
+            .input-group
+                span.input-group-addon Email
+                input.form-control(type="text", name="email")
+
+            .input-group
+                span.input-group-addon Password
+                input.form-control(type="password", name="password")
+
+            .input-group
+                span.input-group-addon Confirm Password
+                input.form-control(type="password", name="confirmpass")
+
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name")
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/users") Cancel

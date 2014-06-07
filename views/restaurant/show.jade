@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+
+    .f2g-show
+        h1= resto.name
+        p
+            = resto.address
+            br
+            = resto.delivery_num
+            br
+            = resto.contact_num
+            br
+            = resto.email
+
+        .btn-group
+            a.btn.btn-default(href="/restaurants/" + resto._id + "/categories") Categories
+            a.btn.btn-primary(href="/restaurants/" + resto._id + "/edit") Edit
+            a.btn.btn-danger(href="/restaurants/" + resto._id + "/delete") Delete
+
+        #categories
+            -categories.forEach(function(category){
+                .category.well
+                    h3= category.name
+
+                    table.table.items
+                        -category.items.forEach(function(item){
+                            tr
+                                td
+                                    = item.name
+                                    br
+                                    em: small= item.description
+
+                                td.item-price= item.price
+
+                                td
+                                    a.btn-xs.add-order(href="#" data-name=item.name data-id=item._id data-price=item.price)
+                                        span.glyphicon.glyphicon-ok
+
+                        -})
+            -})
+

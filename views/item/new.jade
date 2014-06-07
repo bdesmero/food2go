@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 New Item
+
+        form#create-item-form(method="post")
+
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name")
+
+            .input-group
+                span.input-group-addon Description
+                input.form-control(type="text", name="description")
+
+            .input-group
+                span.input-group-addon Price
+                input.form-control(type="text", name="price")
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/restaurants/" + restoId + "/categories/" + categoryId) Cancel

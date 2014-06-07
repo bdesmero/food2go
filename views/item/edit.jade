@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+
+    .f2g-form.well
+        h1 Edit Item
+
+        form#edit-item-form(method="post")
+
+            .input-group
+                span.input-group-addon Name
+                input.form-control(type="text", name="name", value=item.name)
+
+            .input-group
+                span.input-group-addon Description
+                input.form-control(type="text", name="description", value=item.description)
+
+            .input-group
+                span.input-group-addon Price
+                input.form-control(type="text", name="price", value=item.price)
+
+            .form-group
+                input.btn.btn-primary.btn-block(type="submit")
+                a.btn.btn-danger.btn-block(href="/restaurants/" + restoId + "/categories/" + categoryId) Cancel
